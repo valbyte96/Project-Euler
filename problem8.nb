@@ -1,0 +1,167 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6355,        159]
+NotebookOptionsPosition[      6025,        142]
+NotebookOutlinePosition[      6384,        158]
+CellTagsIndexPosition[      6341,        155]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"PROBLEM", " ", "8", "\[IndentingNewLine]", 
+    RowBox[{"AUTHOR", ":", " ", 
+     RowBox[{"VAL", " ", "MCCULLOCH", "\[IndentingNewLine]", "DATE"}], ":", 
+     " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"7", "/", "20"}], "/", "2016"}], "\[IndentingNewLine]", 
+      RowBox[{"Task", ":", " ", 
+       RowBox[{
+       "to", " ", "find", " ", "the", " ", "13", " ", "adjacent", " ", 
+        "numbers", " ", "that", " ", "have", " ", "the", " ", "greatest", " ",
+         "product"}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"number", " ", "to", " ", "parse"}], ";", " ", 
+    RowBox[{"1000", " ", "characters", " ", "long"}]}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+    "number", " ", "=", " ", 
+     "\"\<73167176531330624919225119674426574742355349194934969835203127745063\
+262395783180169848018694788518438586156078911294949545950173795833195285320880\
+551112540698747158523863050715693290963295227443043557668966489504452445231617\
+318564030987111217223831136222989342338030813533627661428280644448664523874930\
+358907296290491560440772390713810515859307960866701724271218839987979087922749\
+219016997208880937766572733300105336788122023542180975125454059475224352584907\
+711670556013604839586446706324415722155397536978179778461740649551492908625693\
+219784686224828397224137565705605749026140797296865241453510047482166370484403\
+199890008895243450658541227588666881164271714799244429282308634656748139191231\
+628245861786645835912456652947654568284891288314260769004224219022671055626321\
+111109370544217506941658960408071984038509624554443629812309878799272442849091\
+888458015616609791913387549920052406368991256071760605886116467109405077541002\
+25698315520005593572972571636269561882670428252483600823257530420752963450\>\"\
+"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"initializes", " ", "largest", " ", "product"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"lProd", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Loop", " ", "through", " ", "length"}], "-", 
+     RowBox[{
+     "12", " ", "to", " ", "find", " ", "all", " ", "possible", " ", 
+      "starting", " ", "sequences"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", "=", "1"}], ",", " ", 
+     RowBox[{"i", "<=", 
+      RowBox[{
+       RowBox[{"StringLength", "[", "number", "]"}], "-", "12"}]}], ",", 
+     RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"tempProd", " ", "=", "1"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{"get", " ", "slice", " ", "of", " ", "number"}], "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"seg", "=", " ", 
+       RowBox[{"StringTake", "[", 
+        RowBox[{"number", ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{"i", "+", "12"}]}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+       "loop", " ", "to", " ", "find", " ", "multiply", " ", "to", " ", 
+        "product"}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"j", "=", "1"}], ",", 
+         RowBox[{"j", "<=", "13"}], ",", 
+         RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"v", "=", 
+           RowBox[{"ToExpression", "[", 
+            RowBox[{"StringTake", "[", 
+             RowBox[{"seg", ",", 
+              RowBox[{"{", "j", "}"}]}], "]"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"tempProd", " ", "=", " ", 
+           RowBox[{"v", "*", "tempProd"}]}], ";"}]}], "\[IndentingNewLine]", 
+        "]"}], "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"update", " ", "greatest", " ", "product"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"tempProd", ">", "lProd"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"lProd", "=", "tempProd"}], ";"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Continue", "[", "]"}], ";"}]}], "]"}]}]}]}], 
+    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", "lProd", 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.678055147294341*^9, 3.678055247506178*^9}, {
+   3.6780552908052197`*^9, 3.678055319746366*^9}, {3.6780553633368187`*^9, 
+   3.678055392289764*^9}, {3.6780555007962837`*^9, 3.678055569228306*^9}, {
+   3.678055624582604*^9, 3.678055685409601*^9}, {3.6780616311895847`*^9, 
+   3.678061749851301*^9}, {3.678094033748674*^9, 3.678094037531856*^9}, {
+   3.678094081111704*^9, 3.678094185294488*^9}, {3.6780942193873043`*^9, 
+   3.678094288168288*^9}, {3.6780943384543457`*^9, 3.678094339614628*^9}, {
+   3.678094381244399*^9, 3.678094435446167*^9}, {3.678094508953216*^9, 
+   3.67809453605263*^9}, {3.67809457316673*^9, 3.6780946083287354`*^9}, {
+   3.6780947662082443`*^9, 3.678094825275873*^9}, {3.678094888648293*^9, 
+   3.678094921001657*^9}, 3.678095074476583*^9, {3.7048330796063232`*^9, 
+   3.7048332382754183`*^9}}],
+
+Cell[BoxData["23514624000"], "Output",
+ CellChangeTimes->{{3.678094902007463*^9, 3.6780949218081083`*^9}, 
+   3.704833041058399*^9, 3.704833189605791*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 607},
+WindowMargins->{{Automatic, -9}, {24, Automatic}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 5272, 113, 852, "Input"],
+Cell[5855, 137, 154, 2, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
