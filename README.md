@@ -4,11 +4,11 @@
 
 
 <ul>
-  <li>prob 1 -- python</li>
-  <li>prob 2 -- python</li>
-  <li>prob 8 -- mathematica</li>
-  <li>prob 16 -- mathematica </li>
-  <li>prob 48 -- python </li>
+  <li>prob 1 &#8210; python</li>
+  <li>prob 2 &#8210; python</li>
+  <li>prob 8 &#8210; mathematica</li>
+  <li>prob 16 &#8210; mathematica </li>
+  <li>prob 48 &#8210; python </li>
 </ul>
 
 
