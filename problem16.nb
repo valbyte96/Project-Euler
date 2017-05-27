@@ -1,0 +1,103 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3230,         95]
+NotebookOptionsPosition[      2863,         77]
+NotebookOutlinePosition[      3223,         93]
+CellTagsIndexPosition[      3180,         90]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"7", "/", "20"}], "/", "2016"}], " ", "problem", " ", "16"}], 
+   ":", " ", 
+   RowBox[{"power", " ", "digit", " ", 
+    RowBox[{"sum", ".", " ", "Find"}], " ", "the", " ", "sum", " ", "of", " ",
+     "the", " ", "digits", " ", "of", " ", 
+    RowBox[{"2", "^", "1000"}]}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.67805367684588*^9, 3.678053720168831*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sNum", " ", "=", " ", 
+     RowBox[{"ToString", "[", " ", 
+      RowBox[{"2", "^", "1000"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"sum", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", "=", "1"}], ",", 
+     RowBox[{"i", "<=", 
+      RowBox[{"StringLength", "[", "sNum", "]"}]}], ",", 
+     RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"v", " ", "=", " ", 
+       RowBox[{"ToExpression", "[", " ", 
+        RowBox[{"StringTake", "[", 
+         RowBox[{"sNum", ",", 
+          RowBox[{"{", "i", "}"}]}], "]"}], "]"}]}], " ", ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"sum", "+=", "v"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+   "\[IndentingNewLine]", "sum", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.678053727704104*^9, 3.6780537415962677`*^9}, {
+   3.6780538118913717`*^9, 3.6780538565817337`*^9}, {3.6780539084647493`*^9, 
+   3.678053948850148*^9}, {3.67805414987087*^9, 3.6780541528212357`*^9}, {
+   3.678054251598811*^9, 3.678054311920788*^9}, {3.6780543648216257`*^9, 
+   3.6780544068318768`*^9}, {3.678054458332469*^9, 3.678054595967626*^9}, {
+   3.678054648722199*^9, 3.6780546743630323`*^9}, {3.678054717105558*^9, 
+   3.678054764730069*^9}, {3.678054812991476*^9, 3.678054813775058*^9}, {
+   3.678054859315116*^9, 3.678054934064596*^9}, 3.6780549718054867`*^9, {
+   3.678055026958817*^9, 3.678055032751143*^9}, {3.678055079485511*^9, 
+   3.678055094771697*^9}}],
+
+Cell[BoxData["1366"], "Output",
+ CellChangeTimes->{
+  3.6780549343631897`*^9, 3.678054972962843*^9, {3.678055028589576*^9, 
+   3.6780550346482887`*^9}, 3.6780550902757072`*^9, 3.704869453128811*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 607},
+WindowMargins->{{Automatic, 180}, {Automatic, 43}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 437, 11, 32, "Input"],
+Cell[CellGroupData[{
+Cell[1020, 35, 1626, 34, 222, "Input"],
+Cell[2649, 71, 198, 3, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
